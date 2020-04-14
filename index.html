@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Covid-19 Estimator</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <style media="screen">
+    h1,input,button,select {display: block;}
+    h1 {font-size: 36px;}
+    .header {margin: 24px auto 36px auto; text-align: center;}
+    .container {margin: 0px auto;}
+    input {margin: 24px auto; padding: 16px; font-size: 24px;}
+    select {margin: 16px auto; padding: 0px 24px; font-size: 24px;}
+    button {margin: 16px auto; padding: 0px 24px; font-size: 24px;}
+    </style>
+	  
+  </head>
 	
 	
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-			
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+  <body>
+    <section class="header">
+      <h1>Covid-19 Estimator</h1>
+    </section>
+    <div class="container">
+      <section class="input-field">
+        <form class="estimator_form">
+          <input data-population type="text" placeholder="population">
+          <input data-time-to-elapse type="text" placeholder="timeToElapse">
+          <input data-reported-cases type="text" placeholder="reportedCases">
+          <input data-total-hospital-beds type="text" placeholder="totalHospitalBeds">
+          <select data-period-type class="period" name="">
+            <option value="days"> days</option>
+            <option value="weeks">weeks</option>
+            <option value="months">months</option>
+          </select>
+          <button data-go-estimate type="submit"> Submit </button>
+        </form>
+      </section>
+    </div>
+
+<script type="text/javascript">
+
+</script>
+  </body>
 </html>
