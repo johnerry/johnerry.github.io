@@ -26,16 +26,23 @@
     </section>
     <div class="container">
       <section class="input-field">
-          <input data-population type="text" placeholder="Population">
-          <input data-time-to-elapse type="text" placeholder="Time to elapse">
-          <input data-reported-cases type="text" placeholder="Reported cases">
-          <input data-total-hospital-beds type="text" placeholder="Total hospital beds">
-          <select data-period-type class="period" name="">
+	  <form>
+	  <label for="population"></label>
+          <input id="population" data-population type="text" placeholder="Population">
+	  <label for="time-to-elapse"></label>
+          <input id="time-to-elapse" data-time-to-elapse  type="text" placeholder="Time to elapse">
+	  <label for="reported-cases"></label>
+          <input id="reported-cases" data-reported-cases type="text" placeholder="Reported cases">
+	  <label for="total-hospital-beds"></label>
+          <input id="total-hospital-beds" data-total-hospital-beds type="text" placeholder="Total hospital beds">
+	  <label for="period-type"></label>
+          <select id="period-type" data-period-type class="period" name="">
             <option value="days"> days</option>
             <option value="weeks">weeks</option>
             <option value="months">months</option>
           </select>
-          <button data-go-estimate type="button"> Submit </button>
+          <button data-go-estimate type="submit"> Submit </button>
+	  </form>
       </section>
     </div>
 
