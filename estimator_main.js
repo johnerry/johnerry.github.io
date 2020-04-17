@@ -1,10 +1,11 @@
-var population,time_to_elapse,reported_cass,total_hospital_beds,period_type,error;
+var population,time_to_elapse,reported_cases,total_hospital_beds,period_type,error,json_text,collate;
 population = document.getElementById("population");
 time_to_elapse = document.getElementById("time_to_elapse");
 reported_cases = document.getElementById("reported_cases");
 total_hospital_beds = document.getElementById("total_hospital_beds");
 period_type = document.getElementById("period_type");
 error = document.getElementById("error");
+json_text = document.getElementById("json_text");
 
 const covid19ImpactEstimator = (data) => {
   const input = data;
@@ -77,10 +78,8 @@ const covid19ImpactEstimator = (data) => {
       };
     };
 
-
     function process(){
       if (!population.checkValidity() && !time_to_elapse.checkValidity() && !reported_cases.checkValidity() && !total_hospital_beds.checkValidity()) {
-        // inpObj.innerHTML = inpObj.validationMessage+"hello";
         error.innerHTML = "*** invalid input(s) OR unfilled field(s)***";
       }else {
         const data = {
@@ -96,8 +95,8 @@ const covid19ImpactEstimator = (data) => {
           population: Number(population.value),
           totalHospitalBeds: Number(total_hospital_beds.value)
         };
-        error.innerHTML = JSON.stringify(covid19ImpactEstimator(data).impact);
-        // error.innerHTML = test;
-
+        collate = '{estimator: {impact: '+JSON.stringify(covid19ImpactEstimator(data).impact)+
+        ', severeImpact: '+JSON.stringify(covid19ImpactEstimator(data).severeImpact)+'}}';
+        json_text.innerHTML = collate;
       }
     }
