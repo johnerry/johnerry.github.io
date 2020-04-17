@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Covid-19 Estimator">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Covid-19,Corona,Virus">
-    <meta name="author" content="John Fash">
-	  
-    <title>Covid-19 Estimator</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <style media="screen">
-    h1,input,button,select {display: block;}
-    h1 {font-size: 36px;}
-    .header {margin: 24px auto 36px auto; text-align: center;}
-    .container {margin: 0px auto;}
-    input {margin: 24px auto; padding: 16px; font-size: 24px;}
-    select {margin: 16px auto; padding: 0px 24px; font-size: 24px;}
-    button {margin: 16px auto; padding: 0px 24px; font-size: 24px;}
-    </style>
-	  
-  </head>
-	
-	
-  <body>
-    <section class="header">
-      <h1>Covid-19 Estimator</h1>
-    </section>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Covid-19 Estimator">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Covid-19,Corona,Virus">
+  <meta name="author" content="John Fash">
+  <title>Covid-19 Estimator</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <style media="screen">
+  *{word-wrap: break-word;box-sizing: border-box; margin: 0px; padding: 0px; font-family: arial, helvetica, sans-serif;}
+  .header {margin: 24px auto 36px auto; text-align: center;}
+  .container{margin: 24px auto; text-align: center;}
+  h1 {font-size: 2em;}
+  h1,button,div,label,input {display: block;}
+  input{text-align: center; margin: 8px auto 24px auto; font-size: 1em; padding: 8px;}
+  button {margin: 24px auto; font-size: 1.2em;}
+  label {font-size: 1.5em;}
+  select{font-size: 0.8em;}
+  #error{ color: red;}
+  </style>
+</head>
+
+
+<body>
+  <section class="header">
+    <h1> Covid-19 Estimator </h1>
+  </section>
+  <section class="input-field">
     <div class="container">
-      <section class="input-field">
-	  <form>
-	  <label for="population">Population</label>
-          <input id="population" data-population type="text">
-	  <label for="time-to-elapse">Time to elapse</label>
-          <input id="time-to-elapse" data-time-to-elapse  type="text">
-	  <label for="reported-cases">Reported cases</label>
-          <input id="reported-cases" data-reported-cases type="text">
-	  <label for="total-hospital-beds">Total hospital beds</label>
-          <input id="total-hospital-beds" data-total-hospital-beds type="text">
-	  <label for="period-type">Period type</label>
-          <select id="period-type" data-period-type class="period" name="">
-            <option value="days"> days</option>
-            <option value="weeks">weeks</option>
-            <option value="months">months</option>
-          </select>
-          <button data-go-estimate type="submit"> Submit </button>
-	  </form>
-      </section>
+      <form>
+        <div class="population">
+          <label> <b>Population</b>
+            <input data-population type="number" required id="population">
+
+          </label>
+        </div>
+        <div class="time-to-elapse">
+          <label> <b>Time To Elapse</b>
+            <input data-time-to-elapse type="number" required id="time_to_elapse" >
+          </label>
+        </div>
+        <div class="reported-cases">
+          <label > <b>Reported Cases</b>
+            <input data-reported-cases type="number" required id="reported_cases" >
+          </label>
+        </div>
+        <div class="total-hospital-beds">
+          <label> <b>Total Hospital Beds</b>
+            <input data-total-hospital-beds type="number" required id="total_hospital_beds" >
+          </label>
+        </div>
+        <div class="period-type">
+          <label> <b>Period Type</b>
+            <select data-period-type class="period" name="" id="period_type">
+              <option value="days"> days</option>
+              <option value="weeks">weeks</option>
+              <option value="months">months</option>
+            </select>
+          </label>
+        </div>
+        <button data-go-estimate type="button" onclick="process()"> Submit </button>
+      </form>
+      <p id="error"></p>
     </div>
-
-<script type="text/javascript">
-
-</script>
-  </body>
+  </section>
+  <script src="estimator_main.js"></script>
+</body>
 </html>
