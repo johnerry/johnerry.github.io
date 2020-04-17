@@ -79,7 +79,8 @@ const covid19ImpactEstimator = (data) => {
     };
 
     function process(){
-      if (!population.checkValidity() && !time_to_elapse.checkValidity() && !reported_cases.checkValidity() && !total_hospital_beds.checkValidity()) {
+      if (!population.checkValidity() && !time_to_elapse.checkValidity() && !reported_cases.checkValidity() &&
+      !total_hospital_beds.checkValidity()) {
         error.innerHTML = "*** invalid input(s) OR unfilled field(s)***";
       }else {
         const data = {
